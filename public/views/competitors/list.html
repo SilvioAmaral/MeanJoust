@@ -1,0 +1,11 @@
+<section data-ng-controller="CompetitorsController" data-ng-init="find()">
+	<ul class="competitors unstyled">
+		<li data-ng-repeat="competitor in competitors">
+			<span>{{competitor.created | date:'medium'}}</span> /
+			<span>{{competitor.user.name}}</span>
+			<h2><a data-ng-href="#!/competitors/{{competitor._id}}">{{competitor.name}}</a></h2>
+			<div>{{competitor.description}}</div>
+		</li>
+	</ul>
+	<h1 data-ng-hide="!competitors || competitors.length">No competitors yet. <br> Why don't you <a href="/#!/competitors/create">Create One</a>?</h1>
+</section>
